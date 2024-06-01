@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="page2.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="img/logo.png" alt="logo" style="width: 130px;position:absolute;top: 15px;left: 10px;"></a>
+            <a href="#">植栽</a>
+            <a href="#">栽問</a>
+            <a href="#">會員專區</a>
+            <a href="#">關於我們</a>
+        </div>
+        <div class="user">
+            <button class="user"><img src="img/user.png" alt="user" onclick="openLoginForm()"></button>
+        </div>
+<!-------------user 跳出視窗(login.html)-------------------->
+        <div id="loginForm" class="modal">
+            <form class="modal-content animate" action="/action_page.php">
+                <span class="close" onclick="closeLoginForm()">&times;</span>
+                <div class="container">
+                    <label for="uname"><b>帳號</b></label>
+                    <input type="text" placeholder="請輸入帳號" name="uname" required>
+
+                    <label for="psw"><b>密碼</b></label>
+                    <input type="password" placeholder="請輸入密碼" name="psw" required>
+                        
+                    <button type="submit">登入</button>
+                </div>
+
+
+            </form>
+        </div>
+
+    <script>
+        function openLoginForm() {
+        document.getElementById("loginForm").style.display = "block";
+        }
+
+        function closeLoginForm() {
+            event.preventDefault();
+            document.getElementById("loginForm").style.display = "none";
+        }
+
+    </script>
+<!-------------user 跳出視窗(login.html)-------------------->
+        <div class="cart">   
+            <button class="cart"><img src="img/cart.png" alt="user"></button>
+        </div>
+        <div class="search">
+            <form><input class="search-button" type="image" src="img/search.png"  alt="send" name="searchbutton" id="searchbutton"></form>
+            <input class="search-bar" type="text" name="search" id="search" placeholder="在此輸入" style="width: 150px;">
+        </div>
+    </nav>
+
+    <div class="all">
+        <h1><span>產品購買</span></h1>
+        <section class="products">
+            <div class="selected">
+                <div class="img">
+                    <img src="img/plantseries1.png">
+                </div>
+                <div class="content">
+                    <h3>產品名字</h3>
+                    <hr>
+                    <h3>數量</h3>
+                    <hr>
+                    <div class="words">
+                        <h3>金額（</h3>
+                        <h3 id="number">1</h3>
+                        <h3>項商品）：$100</h3>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="selected">
+                <div class="img">
+                    <img src="img/plantseries1.png">
+                </div>
+                <div class="content">
+                    <h3>產品名字</h3>
+                    <hr>
+                    <h3>數量</h3>
+                    <hr>
+                    <div class="words">
+                        <h3>金額（</h3>
+                        <h3 id="number">2</h3>
+                        <h3>項商品）：$200</h3>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="selected">
+                <div class="img">
+                    <img src="img/plantseries1.png">
+                </div>
+                <div class="content">
+                    <h3>產品名字</h3>
+                    <hr>
+                    <h3>數量</h3>
+                    <hr>
+                    <div class="words">
+                        <h3>金額（</h3>
+                        <h3 id="number">3</h3>
+                        <h3>項商品）：$300</h3>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </section>
+
+        <section class="below">
+            <hr class="line">
+            <div class="block1">
+                小計
+            </div>
+            <div class="block2">
+                300
+            </div>
+
+            <hr class="line">
+            <div class="block1">
+                活動優惠
+            </div>
+            <div class="block2">
+                -100
+            </div>
+
+            <hr class="line">
+            <div class="block1">
+                運費
+            </div>
+            <div class="block2">
+                -0
+            </div>
+
+            <hr class="line">
+            <div class="block1">
+                總計
+            </div>
+            <div class="block2">
+                200
+            </div>
+
+            <hr class="line">
+            <div class="block1">
+                <p>定購人</p>
+                <p>電話</p>
+                <p>地址</p>
+                <p>取貨方式</p><!--我這邊想加選單-->
+            </div>
+            <div class="block2">
+                <p>名字</p>
+                <p>091234567</p>
+                <p>我家</p>
+                <p>宅配</p>
+            </div>
+            <hr class="line">
+            <button id="send"> 確認送出 </button>
+            <!--我會加'上一頁'按鈕-->
+        <!--我這邊會加彈出視窗-->
+        </section>
+    </div>
+    
+    <footer>
+        <h5>2024 版權所有</h5>
+    </footer>
+</body>
+</html>

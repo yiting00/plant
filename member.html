@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員修改介面</title>
+    <link rel="stylesheet" href="member.css">
+</head>
+<body>
+    <script>
+        function editInfo() {
+    // Hide the display spans and show the input fields
+    document.querySelectorAll('.editInput').forEach(input => input.style.display = 'block');
+    document.getElementById('nameDisplay').style.display = 'none';
+    document.getElementById('emailDisplay').style.display = 'none';
+    document.getElementById('phoneDisplay').style.display = 'none';
+    document.getElementById('addressDisplay').style.display = 'none';
+
+    // Show the save button and hide the edit button
+    document.getElementById('editButton').style.display = 'none';
+    document.getElementById('saveButton').style.display = 'block';
+
+    // Pre-fill the input fields with current values
+    document.getElementById('nameInput').value = document.getElementById('nameDisplay').innerText;
+    document.getElementById('emailInput').value = document.getElementById('emailDisplay').innerText;
+    document.getElementById('phoneInput').value = document.getElementById('phoneDisplay').innerText;
+    document.getElementById('addressInput').value = document.getElementById('addressDisplay').innerText;
+}
+
+function saveInfo() {
+    // Get the updated values from the input fields
+    const updatedName = document.getElementById('nameInput').value;
+    const updatedEmail = document.getElementById('emailInput').value;
+    const updatedPhone = document.getElementById('phoneInput').value;
+    const updatedAddress = document.getElementById('addressInput').value;
+
+    // Update the display spans with the new values
+    document.getElementById('nameDisplay').innerText = updatedName;
+    document.getElementById('emailDisplay').innerText = updatedEmail;
+    document.getElementById('phoneDisplay').innerText = updatedPhone;
+    document.getElementById('addressDisplay').innerText = updatedAddress;
+
+    // Hide the input fields and show the display spans
+    document.querySelectorAll('.editInput').forEach(input => input.style.display = 'none');
+    document.getElementById('nameDisplay').style.display = 'block';
+    document.getElementById('emailDisplay').style.display = 'block';
+    document.getElementById('phoneDisplay').style.display = 'block';
+    document.getElementById('addressDisplay').style.display = 'block';
+
+    // Show the edit button and hide the save button
+    document.getElementById('editButton').style.display = 'block';
+    document.getElementById('saveButton').style.display = 'none';
+
+    alert('個人資訊已更新');
+}
+
+    </script>
+    <div class="container">
+        <h2>個人資訊</h2>
+        <form id="infoForm">
+            <label for="name">姓名:</label>
+            <span id="nameDisplay">王小明</span>
+            <input type="text" id="nameInput" name="name" class="editInput" style="display: none;">
+            <br>
+
+            <label for="email">電子郵件:</label>
+            <span id="emailDisplay">wang@example.com</span>
+            <input type="email" id="emailInput" name="email" class="editInput" style="display: none;">
+            <br>
+
+            <label for="phone">電話號碼:</label>
+            <span id="phoneDisplay">0912345678</span>
+            <input type="tel" id="phoneInput" name="phone" class="editInput" style="display: none;">
+            <br>
+
+            <label for="address">地址:</label>
+            <span id="addressDisplay">台北市信義區市府路1號</span>
+            <input type="text" id="addressInput" name="address" class="editInput" style="display: none;">
+            <br>
+
+            <button type="button" id="editButton" onclick="editInfo()">更改</button>
+            <button type="button" id="saveButton" onclick="saveInfo()" style="display: none;">完成</button>
+        </form>
+    </div>
+</body>
+</html>

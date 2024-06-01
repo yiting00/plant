@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="img/logo.png" alt="logo" style="width: 130px;position:absolute;top: 15px;left: 10px;"></a>
+        <a href="#">植栽</a>
+        <a href="#">栽問</a>
+        <a href="#">會員專區</a>
+        <a href="#">關於我們</a>
+        <div class="user">
+            <button class="user"><img src="img/user.png" alt="user"></button>
+            <ul class="menu">
+                <li>
+                  <button onclick="openLoginForm()">登入</button>
+                </li>
+                <li>
+                  <button onclick="openregisterForm()">註冊</button>
+                </li>
+            </ul>
+        </div>
+<!--user 跳出視窗(login.html/register.html) 暫時刪掉-->
+        <div class="cart">   
+            <button class="cart"><img src="img/cart.png" alt="user"></button>
+        </div>
+        <div class="search">
+            <form><input class="search-button" type="image" src="img/search.png"  alt="send" name="searchbutton" id="searchbutton"></form>
+            <input class="search-bar" type="text" name="search" id="search" placeholder="在此輸入" style="width: 150px;">
+        </div>
+    </nav>
+    <div class="container">
+        <article>
+            <section class="product" data-price="100">
+                <input type="checkbox" class="checkbox" value="100">
+                <img src="img/plantseries1.png" alt="plantseries1">
+                <div class="text-container">
+                    <h2>商品名稱1</h2>
+                    <h6>介紹 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, similique? Quos laborum voluptatem velit nihil! Optio quis quae beatae adipisci deserunt voluptatum excepturi? Soluta dicta quas molestias, voluptatum commodi pariatur!</h6>
+                </div>
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <span class="count">1</span>
+                    <button class="increase">+</button>
+                </div>
+                <button class="trash"><img src="img/trash.png" alt="trash" class="trash"></button>
+                <h3>$100</h3>
+            </section>
+            <section class="product" data-price="150">
+                <input type="checkbox" class="checkbox" value="150">
+                <img src="img/plantseries2.png" alt="plantseries2">
+                <div class="text-container">
+                    <h2>商品名稱2</h2>
+                    <h6>介紹 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, similique? Quos laborum voluptatem velit nihil! Optio quis quae beatae adipisci deserunt voluptatum excepturi? Soluta dicta quas molestias, voluptatum commodi pariatur! lore </h6>
+                </div>
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <span class="count">1</span>
+                    <button class="increase">+</button>
+                </div>
+                <button class="trash"><img src="img/trash.png" alt="trash" class="trash"></button>
+                <h3>$150</h3>
+            </section>
+            <section class="product" data-price="300">
+                <input type="checkbox" class="checkbox" value="300">
+                <img src="img/plantseries3.png" alt="plantseries3">
+                <div class="text-container">
+                    <h2>商品名稱3</h2>
+                    <h6>介紹 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, similique? Quos laborum voluptatem velit nihil! Optio quis quae beatae adipisci deserunt voluptatum excepturi? Soluta dicta quas molestias, voluptatum commodi pariatur! lore </h6>
+                </div>
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <span class="count">1</span>
+                    <button class="increase">+</button>
+                </div>
+                <button class="trash"><img src="img/trash.png" alt="trash" class="trash"></button>
+                <h3>$300</h3>
+            </section>
+        </article>
+        <footer>
+            <h4>小計金額 <span id="total-amount">0 元</span></h4>
+            <button id="checkout-button"> <a href="page2.html" style="color:white;text-decoration:none"> 確認結帳</a></button>
+        </footer>
+    </div>
+
+    <script>
+        const products = document.querySelectorAll('.product');
+        const totalAmount = document.getElementById('total-amount');
+
+        products.forEach(product => {
+            const decreaseButton = product.querySelector('.decrease');
+            const increaseButton = product.querySelector('.increase');
+            const countSpan = product.querySelector('.count');
+            const checkbox = product.querySelector('.checkbox');
+            const price = parseFloat(product.getAttribute('data-price'));
+
+            decreaseButton.addEventListener('click', () => {
+                let count = parseInt(countSpan.innerText);
+                if (count > 1) {
+                    count--;
+                    countSpan.innerText = count;
+                    updateSum();
+                }
+            });
+
+            increaseButton.addEventListener('click', () => {
+                let count = parseInt(countSpan.innerText);
+                count++;
+                countSpan.innerText = count;
+                updateSum();
+            });
+
+            checkbox.addEventListener('change', updateSum);
+        });
+
+        function updateSum() {
+            let sum = 0;
+            products.forEach(product => {
+                const count = parseInt(product.querySelector('.count').innerText);
+                const price = parseFloat(product.getAttribute('data-price'));
+                const checkbox = product.querySelector('.checkbox');
+                if (checkbox.checked) {
+                    sum += count * price;
+                }
+            });
+            totalAmount.innerText = sum + ' 元';
+        }
+    </script>
+    <script>/*trash*/
+    var hideButtons = document.querySelectorAll('.trash');
+    hideButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            this.parentElement.style.display = 'none';
+    });
+});
+
+    </script>
+</body>
+</html>

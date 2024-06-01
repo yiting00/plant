@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!--cookie--> 
+    <div class="cookie" id="cookie"><p style="margin:20px;">請允許我們使用cookie</p>
+    <button class="agree" id="agreeButton">同意</button>
+    <button class="reject" id="rejectButton">拒絕</button>
+    </div>
+    <script>
+        // 獲取同意和拒绝按鈕及 cookie 提示 div 元素
+        const agreeButton = document.getElementById('agreeButton');
+        const rejectButton = document.getElementById('rejectButton');
+        const cookieDiv = document.getElementById('cookie');
+        // 定義關閉 cookie 提示 div 的函数
+        function closeCookieDiv() {
+          cookieDiv.style.display = 'none';
+        }
+        // 為同意和拒绝按鈕添加點擊事件監聽器
+        agreeButton.addEventListener('click', closeCookieDiv);
+        rejectButton.addEventListener('click', closeCookieDiv);
+    </script>
+    <!--cookie--> 
+    <nav>
+        <a href="index.html"><img src="img/logo.png" alt="logo" style="width: 130px;position:absolute;top: 15px;left: 10px;"></a>
+        <a href="#">植栽</a>
+        <a href="#">栽問</a>
+        <a href="#">會員專區</a>
+        <a href="#">關於我們</a>
+        <div class="user">
+            <button class="user"><img src="img/user.png" alt="user"></button>
+            <ul class="menu">
+                <li>
+                  <button onclick="openLoginForm()">登入</button>
+                </li>
+                <li>
+                  <button onclick="openregisterForm()">註冊</button>
+                </li>
+            </ul>
+        </div>
+<!-------------user 跳出視窗(login.html/register.html)-------------------->
+        <div id="loginForm" class="modal">
+            <form class="modal-content animate" action="/action_page.php">
+                <span class="close" onclick="closeLoginForm()">&times;</span>
+                <div class="container">
+                    <label for="uname"><b>帳號</b></label>
+                    <input type="text" placeholder="請輸入帳號" name="uname" required>
+
+                    <label for="psw"><b>密碼</b></label>
+                    <input type="password" placeholder="請輸入密碼" name="psw" required>    
+                    <button type="submit">登入</button>
+                </div>
+            </form>
+        </div>
+
+    <script>
+        function openLoginForm() {
+        document.getElementById("loginForm").style.display = "block";
+        }
+
+        function closeLoginForm() {
+            event.preventDefault();
+            document.getElementById("loginForm").style.display = "none";
+        }
+
+    </script>
+    <!--register-->
+        <div id="registerForm" class="modal">
+            <form class="modal-content animate" action="submit.php" method="post">
+                <span class="close" onclick="closeregisterForm()">&times;</span>
+                <h1>會員註冊</h1>
+                <div class="container">
+                    <label for="username">會員帳號:</label><br>
+                    <input type="text" id="username" name="username" required><br>
+                    
+                    <label for="password">會員密碼:</label><br>
+                    <input type="password" id="password" name="password" required><br>
+                    
+                    <label for="confirm_password">重複密碼:</label><br>
+                    <input type="password" id="confirm_password" name="confirm_password" required><br>
+                    
+                    <label for="fullname">會員名字:</label><br>
+                    <input type="text" id="fullname" name="fullname" required><br>
+                    
+                    <label for="phone">電話:</label><br>
+                    <input type="tel" id="phone" name="phone" required><br>
+                    
+                    <label for="address">會員住址:</label><br>
+                    <input type="text" id="address" name="address" required><br>
+                    
+                    <label for="email">電子信箱:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                    
+                    <label>會員性別:</label><br>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">男性</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">女性</label><br>
+                    
+                    <label for="birthdate">會員生日:</label><br>
+                    <input type="date" id="birthdate" name="birthdate" required><br>
+                    
+                    <input type="submit" value="送出">
+                </div>
+            </form>
+        </div>
+
+    <script>
+        function openregisterForm() {
+        document.getElementById("registerForm").style.display = "block";
+        }
+
+        function closeregisterForm() {
+            event.preventDefault();
+            document.getElementById("registerForm").style.display = "none";
+        }
+
+    </script>
+<!-------------user 跳出視窗(login.html/register.html)-------------------->
+        <div class="cart">   
+            <button class="cart"><img src="img/cart.png" alt="user"></button>
+        </div>
+        <div class="search">
+            <form><input class="search-button" type="image" src="img/search.png"  alt="send" name="searchbutton" id="searchbutton"></form>
+            <input class="search-bar" type="text" name="search" id="search" placeholder="在此輸入" style="width: 150px;">
+        </div>
+    </nav>
+    <main>      
+        <section class="ad">
+            <marquee>植管人優惠開跑啦~ 全「管」商品滿千送百!只要消費666即可享免運!!心動不如馬上行動!</marquee>
+            <!--動態廣告-->
+            <div class="slideshow-container">
+                <div class="adslide fade">
+                    <img src="img/ad01.jpg" alt="Slide 1" style="height: 550px;margin-left: 60px;">
+                </div>
+                <div class="adslide fade">
+                    <img src="img/ad02.jpg" alt="Slide 2" style="height: 550px;margin-left: 60px;">
+                </div>
+                <div class="adslide fade">
+                    <img src="img/ad03.jpg" alt="Slide 3" style="height: 550px;margin-left: 60px;">
+                </div>
+            </div>
+        
+            <script>
+                var slideIndex = 0;
+                adshowSlides();
+        
+                function adshowSlides() {
+                    var i;
+                    var adslides = document.getElementsByClassName("adslide");           
+                    for (i = 0; i < adslides.length; i++) {
+                        adslides[i].style.display = "none";
+                    }                   
+                    slideIndex++;
+                    if (slideIndex > adslides.length) {
+                        slideIndex = 1;
+                    }
+                    adslides[slideIndex - 1].style.display = "block";
+                    setTimeout(adshowSlides, 2000); // 2 秒切换一次
+                }
+            </script>
+            <!--動態廣告-->
+        </section>
+        <section class="series">
+            <img src="img/plantseries1.png" alt="plantseries1" style="width: 100%;">
+            <h2 style="writing-mode: vertical-lr;justify-items: end;">系列1</h2>
+            <img src="img/plantseries2.png" alt="plantseries2" style="width: 100%;">
+            <h2 style="writing-mode: vertical-lr;justify-items: end;">系列2</h2>
+            <img src="img/plantseries3.png" alt="plantseries3" style="width: 100%;">
+            <h2 style="writing-mode: vertical-lr;justify-items: end;">系列3</h2>
+            <img src="img/plantseries4.png" alt="plantseries4" style="width: 100%;">
+            <h2 style="writing-mode: vertical-lr;justify-items: end;">系列4</h2>
+            <img src="img/plantseries5.png" alt="plantseries5" style="width: 100%;">
+            <h2 style="writing-mode: vertical-lr;justify-items: end;">系列5</h2>
+            <img src="img/plantseries6.png" alt="plantseries6" style="width: 100%;">
+            <h2 style="writing-mode: vertical-lr;justify-items: end;">系列6</h2>
+        </section>
+        <section class="recommend" style="background-color: rgb(215, 215, 215);">
+            <div class="recommend-container">
+                <div class="recommend-text">
+                    <p>推薦商品</p>
+                </div>
+                <div class="slider-container">
+                    <button class="prev">←</button>
+                    <div class="slider">
+                        <div class="slide"><img src="img/plantseries1.png" alt="Image 1"></div>
+                        <div class="slide"><img src="img/plantseries2.png" alt="Image 2"></div>
+                        <div class="slide"><img src="img/plantseries3.png" alt="Image 3"></div>
+                        <div class="slide"><img src="img/plantseries4.png" alt="Image 4"></div>
+                    </div>
+                    <button class="next">→</button>
+                </div>
+            </div>
+        </section>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const slider = document.querySelector('.slider');
+                const slides = document.querySelectorAll('.slide');
+                const prevButton = document.querySelector('.prev');
+                const nextButton = document.querySelector('.next');
+                let index = 0;
+    
+                function showSlide(index) {
+                    slider.style.transform = `translateX(${-index * 100}%)`;
+                }
+    
+                prevButton.addEventListener('click', () => {
+                    index = (index > 0) ? index - 1 : slides.length - 1;
+                    showSlide(index);
+                });
+    
+                nextButton.addEventListener('click', () => {
+                    index = (index < slides.length - 1) ? index + 1 : 0;
+                    showSlide(index);
+                });
+            });
+        </script>
+            <!--推薦商品滑動圖片-->
+        
+    </main>
+    <footer>
+        <div><p style="font-size: 24px;">常見問題</p><br><a href="#">會員管理</a><br><a href="#">照顧方法</a><br><a href="#">超商/宅配</a><br><a href="#">退換貨說明</a> </div>
+        <div><p style="font-size: 24px;">品牌名稱</p><br><a href="#">我們的故事</a><br><a href="#">植物大哉問</a></div>
+        <!--品牌名稱改-->
+        <div class="contact"><p style="font-size: 24px;">聯絡我們</p> 
+        <br><a href="#"><img src="img/ig.png" alt="ig"></a><a href="#"><img src="img/fb.png" alt="fb"></a><a href="#"><img src="img/line.png" alt="line"></a><a href="#"><img src="img/gmail.png" alt="gmail"></a>
+        <p style="font-size: 17px;">客服電話 : 0800-800800 <br>服務時間：週一至週五 09:00-18:00</p> 
+        </div> 
+        <h5>2024 版權所有</h5>
+    </footer>
+</body>
+</html>

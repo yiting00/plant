@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+    margin: 0px auto;
+}
+
+nav {
+    background-color: rgb(215, 215, 215);
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 14px 16px;
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.search-button {
+    width: 25px;
+    margin: 10px;
+}
+
+.search {
+    float: right;
+    --padding: 0px;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 28px;
+    background: #f6f6f6;
+}
+
+.search-bar {
+    font-size: 16px;
+    color: #333333;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.user img,
+.cart img {
+    width: 30px;
+    float: right;
+    margin: 10px;
+}
+
+.user,
+.cart {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #333;
+    cursor: pointer;
+    float: right;
+}
+
+h1{
+    margin-top: 60px;
+    margin-bottom: -40px;
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 3px solid rgb(215, 215, 215); 
+    color: #444444;
+    line-height: 0.1em;
+} 
+ 
+h1 span{ 
+    background:#fff; 
+    padding: 0 10px; 
+}
+
+.all{
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    grid-gap: 50px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.products{
+    background-color: white;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    grid-gap: 40px;
+    padding: 50px 50px 0px 50px;
+}
+
+.selected{
+    background-color: #f6f6f6;
+    height: 260px;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: grid;
+    grid-template-columns: 200px 600px;
+    grid-auto-flow: row;
+    grid-gap: 80px;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.img{
+    margin:40px 50px 30px 50px;
+    width:180px;
+    height: 180px;
+    background-color: #333;
+}
+
+.img img{
+    width: 180px;
+    height: 180px;
+}
+
+.content{
+    padding-top: 45px;
+    padding-right: 70px;
+    text-align: left;
+    width: 100%;
+}
+
+#number{
+    font-size: 36px;
+}
+
+.content h3{
+    font-weight: normal;
+    color:#444444;
+    margin: 10px 0px;
+    align-content: center;
+}
+
+.content hr{
+    border: 1px solid rgb(215, 215, 215);
+}
+
+.words{
+    display: flex;
+    flex-direction: row;
+}
+
+.line{
+    border: 1px solid #444444;
+    width: 100%;
+    grid-column: 1/4;
+}
+
+.below{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row;
+    padding: 100px auto 100px auto;
+    align-items: center;
+    color: #333333;
+    grid-gap: 0px;
+    margin-top: 30px;
+}
+
+.block1{
+    background-color: white;
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 25px;
+    color: #444444;
+}
+
+.block2{
+    background-color: white;
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 25px;
+    color: #444444;
+    text-align: right;
+}
+
+#send{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 30px;
+    border: none;
+    margin-left: 30%;
+    font-size: 25px;
+    color:#333333;
+    background-color:rgb(215, 215, 215);
+    width: 40%;
+    grid-column: 1/4;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 50px;
+}
+
+#send:hover{
+    background-color: #333333;
+    color: rgb(215, 215, 215);
+}
+
+#send:active {
+    background-color: #333333;
+    color: rgb(215, 215, 215);
+    box-shadow:none;
+    transform: translateY(4px);
+}
+
+
+
+
+footer {
+    min-height: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    font-size: 20px;
+}
+
+div a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+h5 {
+    color: #444444;
+    text-align: center;
+    grid-column: span 3;
+    grid-row: span 1;
+    font-size: 15px;
+    display: flex;
+    align-items: flex-end;
+}
+
+div.contact img {
+    width: 40px;
+    height: auto;
+    padding-right: 15px;
+    padding-bottom: 8px;
+}
