@@ -13,8 +13,8 @@
         <a href="index.html"><img src="img/logo.png" alt="logo" style="width: 130px;position:absolute;top: 15px;left: 10px;"></a>
             <a href="#">植栽</a>
             <a href="#">栽問</a>
-            <a href="#">會員專區</a>
-            <a href="#">關於我們</a>
+            <a href="#">植百科</a>
+            <a href="#">關於</a>
         </div>
         <div class="user">
             <button class="user"><img src="img/user.png" alt="user" onclick="openLoginForm()"></button>
@@ -46,7 +46,6 @@
             event.preventDefault();
             document.getElementById("loginForm").style.display = "none";
         }
-
     </script>
 <!-------------user 跳出視窗(login.html)-------------------->
         <div class="cart">   
@@ -72,7 +71,7 @@
                     <hr>
                     <div class="words">
                         <h3>金額（</h3>
-                        <h3 id="number">1</h3>
+                        <h3 id="quantity">1</h3>
                         <h3>項商品）：$100</h3>
                     </div>
                     <hr>
@@ -90,7 +89,7 @@
                     <hr>
                     <div class="words">
                         <h3>金額（</h3>
-                        <h3 id="number">2</h3>
+                        <h3 id="quantity">2</h3>
                         <h3>項商品）：$200</h3>
                     </div>
                     <hr>
@@ -108,7 +107,7 @@
                     <hr>
                     <div class="words">
                         <h3>金額（</h3>
-                        <h3 id="number">3</h3>
+                        <h3 id="quantity">3</h3>
                         <h3>項商品）：$300</h3>
                     </div>
                     <hr>
@@ -153,24 +152,59 @@
             <div class="block1">
                 <p>定購人</p>
                 <p>電話</p>
+                <p>取貨方式</p>
                 <p>地址</p>
-                <p>取貨方式</p><!--我這邊想加選單-->
+                <p>付款方式</p>
             </div>
             <div class="block2">
                 <p>名字</p>
                 <p>091234567</p>
-                <p>我家</p>
-                <p>宅配</p>
+                <p>
+                    <select id="method">
+                        <option value="lazy">宅配送達</option>
+                        <option value="self">自取</option>
+                    </select>
+                </p>
+                <p>
+                    <select id="address">
+                        <option value="home">我家</option>
+                        <option value="none">無</option>
+                    </select>
+                </p>
+                <p>
+                    <select id="payment">
+                        <option value="online">線上付款</option>
+                        <option value="pay">貨到付款</option>
+                    </select>
+                </p>
             </div>
             <hr class="line">
-            <button id="send"> 確認送出 </button>
-            <!--我會加'上一頁'按鈕-->
-        <!--我這邊會加彈出視窗-->
         </section>
-    </div>
+
+        <div class="buttons">
+            <button id="prev">上一頁</button>
+            <button id="send">確認結帳</button>
+        </div>
+        
+        <div id="pop" class="pop">
+            <div class="pop-content">
+                <h2>請輸入信用卡卡號：</h2>
+                <input type="tel" id="bank" required minlength="16" maxlength="16">
+                <section>
+                    <button class="backOnce">返回</button>
+                    <button class="paid">付款</button>
+                </section>
+            </div>
+        </div>
     
-    <footer>
-        <h5>2024 版權所有</h5>
-    </footer>
+        <div id="pop2" class="pop2">
+            <div class="pop2-content">
+                <h2>：已成功送出訂單</h2>
+                <button class="back">回到首頁</button>
+            </div>
+        </div>
+        <script src="cart2.js"></script>
+    </div>
+
 </body>
 </html>
