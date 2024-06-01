@@ -78,12 +78,12 @@ a:hover {
 }
 
 /*----user-----*/
-/* 描述下拉選單容器 */
+/* Styling the container */
 div.user {
     position: relative;
 }
 
-/* 描述下拉選單 */
+/* Styling the dropdown menu */
 div.user>.menu {
     position: absolute;
     left: 0;
@@ -91,32 +91,41 @@ div.user>.menu {
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 50px;
+    /* Adjust the width as needed */
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-    /* 預設menu為隱藏 */
+    background-color: #ffffff;
+    /* Set background color */
+    border-radius: 5px;
+    /* Add some border radius for better appearance */
+    border: 1px solid #ccc;
+    /* Add a border for clarity */
     display: none;
 }
 
-/* 描述hover後的下拉選單 */
+/* Showing the dropdown menu on hover */
 div.user:hover>.menu {
     display: block;
 }
 
-/* 描述下拉選單裡的按鈕 (li那要改)*/
+/* Styling the links inside the dropdown menu */
 div.user>.menu a {
     text-decoration: none;
-    background: white;
-    color: gray;
+    color: #333333;
+    /* Adjust text color */
     display: block;
-    padding: 5px 0;
-    text-align: center;
-    transition: all .5s ease;
+    padding: 10px 15px;
+    /* Add padding for better clickability */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
 }
 
-/*(li那要改)*/
+/* Hover effect for the links */
 div.user>.menu a:hover {
-    background: #eee;
+    background-color: #f0f0f0;
+    /* Lighter background on hover */
 }
+
 
 /*----user-----*/
 
