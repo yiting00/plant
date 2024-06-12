@@ -13,8 +13,8 @@
     background: linear-gradient(45deg, #6b4eff, #44c7f4);
 }
 
-button {
-    background-color: #6b4eff;
+button.login {
+    background-color: #553bd0;
     color: #fff;
     border: none;
     padding: 15px 30px;
@@ -25,7 +25,7 @@ button {
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-button:hover {
+button.login:hover {
     background-color: #553bd0;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
@@ -48,7 +48,14 @@ button:hover {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
     animation: fadeIn 0.5s;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    margin-left: 550px;
+    margin-top: 150px;
 }
 
 @keyframes fadeIn {
@@ -94,12 +101,12 @@ button:hover {
     display: block;
     font-size: 14px;
     margin-bottom: 10px;
-    text-align: left;
+    text-align: center;
 }
 
 .container input[type="text"],
 .container input[type="password"] {
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -110,7 +117,7 @@ button:hover {
 }
 
 .container button[type="submit"] {
-    background-color: #6b4eff;
+    background-color: #553bd0;
     color: white;
     border: none;
     padding: 15px 30px;
