@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品介面</title>
+    <link rel="stylesheet" href="../assets/css/product.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="../assets/img/logo.png" alt="logo" style="width: 130px;position:absolute;top: 15px;left: 10px;"></a>
+        <a href="all_product.html">植栽</a>
+        <a href="member.html">會員專區</a>
+        <a href="aboutus.html">關於我們</a>
+
+        <div class="user">
+            <button class="user"><img src="../assets/img/user.png" alt="user"></button>
+        </div>
+
+        <div class="cart">   
+            <a href="cart.html" style="padding: 0;"><button class="cart"><img src="../assets/img/cart.png" alt="user"></button></a>
+        </div>
+        
+        <div class="search">
+            <form><input class="search-button" type="image" src="../assets/img/search.png"  alt="send" name="searchbutton" id="searchbutton"></form>
+            <input class="search-bar" type="text" name="search" id="search" placeholder="在此輸入" style="width: 150px;">
+        </div>
+    </nav>
+
+    <div class="all">
+        <section class="images">
+            <div class="big">
+                <img src="../assets/img/plantseries1.png" style="width:100%">
+            </div>
+            
+            <div class="big">
+                <img src="../assets/img/plantseries2.png" style="width:100%">
+            </div>
+
+            <div class="big">
+                <img src="../assets/img/plantseries3.png" style="width:100%">
+            </div>
+                
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            <div class="row">
+                <div class="column">
+                    <img class="demo" src="../assets/img/plantseries1.png" style="width:100%" onclick="currentSlide(1)">
+                </div>
+                <div class="column">
+                    <img class="demo" src="../assets/img/plantseries2.png" style="width:100%" onclick="currentSlide(2)">
+                </div>
+                <div class="column">
+                    <img class="demo" src="../assets/img/plantseries3.png" style="width:100%" onclick="currentSlide(3)">
+                </div>
+            </div>
+            
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  let i;
+                  let slides = document.getElementsByClassName("big");
+                  let dots = document.getElementsByClassName("demo");
+                
+                  if (n > slides.length) {slideIndex = 1}
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";
+                  dots[slideIndex-1].className += " active";
+                
+                }
+                </script>
+        </section>
+
+        <section class="content">
+            <h1>名稱</h1>
+            <hr>
+            <h1>＄價格</h1>
+            <hr>
+            <h1 style="margin-bottom: 5px;">介紹：</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing Dolor fugiat, isicing Dolor fugiat,</p>
+            <hr>
+            <h1 style="margin-bottom: 5px;">庫存：</h1>
+            <p style="font-weight: bold; font-size: 30px; ">20</p>
+            <hr>
+        </section>
+
+        <section class="BuySection">
+            <div class="NumSection">
+                <button class="minus">一</button>
+                <input type="text" class="num" value="1">
+                <button class="plus">十</button>
+            </div>
+            <div class="AddCartSection">
+                <a href="cart.html"> <button class="AddCart">加入購物車</button></a>
+            </div>
+            <script>
+                const numInput = document.querySelector('.num');
+                const minusButton = document.querySelector('.minus');
+                const plusButton = document.querySelector('.plus');
+
+                let currentValue = parseInt(numInput.value);
+
+                function updateNumInput(value) {
+                numInput.value = value;
+                }
+
+                minusButton.addEventListener('click', () => {
+                if (currentValue > 0) {
+                    currentValue--;
+                    updateNumInput(currentValue);
+                }
+                });
+
+                plusButton.addEventListener('click', () => {
+                currentValue++;
+                updateNumInput(currentValue);
+                });
+            </script>
+        </section>
+
+        <section class="below">
+            <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+            <div class="CommentSection">
+                <h1>商品評論：</h1>
+                <div class="cm">
+                    <div class="block">
+                        <h2>小明012：</h2>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star-grey"></iconify-icon>
+                        <p>太棒了</p>
+                        <p id="date">2024/5/1</p>
+                    </div>
+                    <hr>
+
+                    <div class="block">
+                        <h2>fjdjd_354：</h2>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <p>OMG! I really love it!</p>
+                        <p id="date">2024/03/06</p>
+                    </div>
+                    <hr>
+
+                    <div class="block">
+                        <h2>我媽媽：</h2>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star"></iconify-icon>
+                        <iconify-icon
+                            icon="material-symbols:star"
+                            width="30"
+                            class="star-grey"></iconify-icon>
+                        <p>不錯不錯。</p>
+                        <p id="date">2023/12/15</p>
+                    </div>
+                    <hr>
+                </div>        
+            </div>
+
+            <div class="QA">
+                <h1>常見問題：</h1>
+                <hr>
+                <p>照顧方法</p>
+                <p>超商/宅配</p>
+                <p>退換貨說明</p>
+                <p>更多...</p>
+            </div>
+        </section>
+
+        <div class="press">
+            <button class="class" onclick="toggleContent(this)">我要留言：</button>
+            <div class="MyCm">
+                <h2>帳號：</h2><!--該用戶的帳號名稱：-->
+
+                <div class="AllStar">
+                    <iconify-icon
+                        icon="material-symbols:star"
+                        width="30"
+                        data-index="1"
+                        class="star-grey"></iconify-icon>
+                    <iconify-icon
+                        icon="material-symbols:star"
+                        width="30"
+                        data-index="2"
+                        class="star-grey"></iconify-icon>
+                    <iconify-icon
+                        icon="material-symbols:star"
+                        width="30"
+                        data-index="3"
+                        class="star-grey"></iconify-icon>
+                    <iconify-icon
+                        icon="material-symbols:star"
+                        width="30"
+                        data-index="4"
+                        class="star-grey"></iconify-icon>
+                    <iconify-icon
+                        icon="material-symbols:star"
+                        width="30"
+                        data-index="5"
+                        class="star-grey"></iconify-icon>
+                    </div>
+                    <!--------------星星評分-------------->
+                    <script>
+                        const stars = document.querySelectorAll('.AllStar iconify-icon');
+
+                        stars.forEach((star, index) => {
+                        star.addEventListener('click', () => {
+                            
+                            stars.forEach(s => {
+                            s.classList.remove('star');
+                            s.classList.add('star-grey');
+                            });
+
+                            for (let i = 0; i <= index; i++) {
+                            stars[i].classList.remove('star-grey');
+                            stars[i].classList.add('star');
+                            }
+                        });
+                        });
+                    </script>
+                    <!--------------星星評分-------------->
+
+                    <div><textarea placeholder="在這裡寫下您的留言..."></textarea></div>
+
+                    <div><button class="send">送出</button></div>
+
+                    <!--------------按'留言'彈出-------------->
+                    <script>
+                        function toggleContent(btn) {
+                            btn.classList.toggle('active');
+                            btn.nextElementSibling.classList.toggle('show');
+                            btn.parentElement.classList.toggle('expanded');
+                        }
+                    </script>
+                    <!--------------按'留言'彈出-------------->
+                </div>
+        </div>
+
+        <section class="others">
+            <div class="rec"><h1>其他您可能有興趣的商品：</h1></div>
+            <hr>
+            <div class="gallery">  
+                    <img src="../assets/img/plantseries1.png">
+                    <img src="../assets/img/plantseries2.png">
+                    <img src="../assets/img/plantseries3.png">
+                    <img src="../assets/img/plantseries4.png">
+                    <img src="../assets/img/plantseries5.png">
+                </section>
+            </div>
+        </section>
+    </div>
+
+        <button id="topBtn" class="top"> 返回頂部 </button>
+        <script>
+            const topBtn = document.getElementById('topBtn');
+
+            topBtn.addEventListener('click', scrollToTop);
+
+            function scrollToTop() {
+                window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+                });
+            }
+        </script>
+
+    
+    <footer>
+        <div><p style="font-size: 24px;">常見問題</p><br><a href="#">會員管理</a><br><a href="#">照顧方法</a><br><a href="#">超商/宅配</a><br><a href="#">退換貨說明</a> </div>
+        <div><p style="font-size: 24px;">品牌名稱</p><br><a href="#">我們的故事</a><br><a href="#">植物大哉問</a></div>
+        <!--品牌名稱改-->
+        <div class="contact"><p style="font-size: 24px;">聯絡我們</p> 
+        <br><a href="#"><img src="../assets/img/ig.png" alt="ig"></a><a href="#"><img src="../assets/img/fb.png" alt="fb"></a><a href="#"><img src="../assets/img/line.png" alt="line"></a><a href="#"><img src="../assets/img/gmail.png" alt="gmail"></a>
+        <p style="font-size: 17px;">客服電話 : 0800-800800 <br>服務時間：週一至週五 09:00-18:00</p> 
+        </div> 
+        <h5>2024 版權所有</h5>
+    </footer>
+</body>
+</html>

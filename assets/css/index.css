@@ -94,8 +94,8 @@ div.user {
 
 div.user>.menu {
     position: absolute;
-    right: 12px;
-    top: 55px;
+    right: 2px;
+    top: 45px;
     list-style: none;
     margin: 0px;
     padding: 0px;
@@ -184,7 +184,7 @@ marquee {
 
 section.ad {
     min-height: 600px;
-    background-image: url('img/indexplant1.jpg');
+    background-image: url('../img/indexplant1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -217,7 +217,7 @@ h2 {
     writing-mode: vertical-lr;
     justify-items: end;
     margin-bottom: 15px;
-    background-image: url('img/paper.png');
+    background-image: url('../img/paper.png');
     background-size: cover;
     padding-inline: 45px;
     padding-block: 20px;
@@ -232,7 +232,7 @@ h2::before {
     left: -10px;
     width: 30px;
     height: 30px;
-    background-image: url('img/clip.png');
+    background-image: url('../img/clip.png');
     background-size: cover;
     rotate: -1deg;
 }

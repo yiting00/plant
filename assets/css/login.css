@@ -5,21 +5,32 @@
     font-family: 'Arial', sans-serif;
 }
 
-.registerForm {
+.loginform {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     background: linear-gradient(45deg, #6b4eff, #44c7f4);
-    margin: 0;
 }
 
-h1 {
-    text-align: center;
-    color: black;
+button.login {
+    background-color: #553bd0;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-form.modal {
+button.login:hover {
+    background-color: #553bd0;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -29,20 +40,22 @@ form.modal {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
-    align-items: flex-start;
-    padding-bottom: 50px;
+    align-items: center;
 }
 
-form.modal-content animate {
+.modal-content {
     background-color: #fff;
-    padding: 20px;
     border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
     animation: fadeIn 0.5s;
-    width: 90%;
-    max-width: 400px;
-    max-height: 90vh;
-    overflow: auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    margin-left: 550px;
+    margin-top: 150px;
 }
 
 @keyframes fadeIn {
@@ -80,68 +93,42 @@ form.modal-content animate {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    padding: 40px;
+    text-align: center;
 }
 
 .container label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #444;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-.containerregister input[type="address"],
-.containerregister input[type="username"],
-.containerregisterinput[type="password"],
-.containerregisterinput[type="tel"],
-.containerregisterinput[type="email"],
-.containerregisterinput[type="date"] {
+.container input[type="text"],
+.container input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 5px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
     font-size: 16px;
 }
 
-.containerregisterinput[type="radio"] {
-    margin: 0 10px 10px 0;
-}
-
-.containerregisterinput[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    background-color: #6b4eff;
+.container button[type="submit"] {
+    background-color: black;
     color: white;
     border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.containerregisterinput[type="submit"]:hover {
-    background-color: #553bd0;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-.registerbutton {
-    background-color: #553bd0;
-    color: #fff;
-    border: none;
-    padding: 10px 30px;
+    padding: 15px 30px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 25px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, box-shadow 0.3s;
-    margin-top: 10px;
 }
 
-.registerbutton:hover {
-    background-color: #553bd0;
+.container button[type="submit"]:hover {
+    background-color: gray;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }

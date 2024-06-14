@@ -4,55 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
-    <link rel="stylesheet" href="cart2.css">
-    <link rel="stylesheet" href="login.css">
+    <title>cart</title>
+    <link rel="stylesheet" href="../assets/css/cart2.css">
+
 </head>
 <body>
     <nav>
-        <a href="index.html"><img src="img/logo.png" alt="logo" style="width: 130px;position:absolute;top: 15px;left: 10px;"></a>
-            <a href="#">植栽</a>
-            <a href="#">栽問</a>
-            <a href="#">植百科</a>
-            <a href="#">關於</a>
-        </div>
+        <a href="index.html"><img src="../assets/img/logo.png" alt="logo" style="width: 130px;position:absolute;top: 15px;left: 10px;"></a>
+        <a href="all_product.html">植栽</a>
+        <a href="member.html">會員專區</a>
+        <a href="aboutus.html">關於我們</a>
+
         <div class="user">
-            <button class="user"><img src="img/user.png" alt="user" onclick="openLoginForm()"></button>
-        </div>
-<!-------------user 跳出視窗(login.html)-------------------->
-        <div id="loginForm" class="modal">
-            <form class="modal-content animate" action="/action_page.php">
-                <span class="close" onclick="closeLoginForm()">&times;</span>
-                <div class="container">
-                    <label for="uname"><b>帳號</b></label>
-                    <input type="text" placeholder="請輸入帳號" name="uname" required>
-
-                    <label for="psw"><b>密碼</b></label>
-                    <input type="password" placeholder="請輸入密碼" name="psw" required>
-                        
-                    <button type="submit">登入</button>
-                </div>
-
-
-            </form>
+            <button class="user"><img src="../assets/img/user.png" alt="user"></button>
         </div>
 
-    <script>
-        function openLoginForm() {
-        document.getElementById("loginForm").style.display = "block";
-        }
-
-        function closeLoginForm() {
-            event.preventDefault();
-            document.getElementById("loginForm").style.display = "none";
-        }
-    </script>
-<!-------------user 跳出視窗(login.html)-------------------->
         <div class="cart">   
-            <button class="cart"><img src="img/cart.png" alt="user"></button>
+            <a href="cart.html" style="padding: 0;"><button class="cart"><img src="../assets/img/cart.png" alt="user"></button></a>
         </div>
+        
         <div class="search">
-            <form><input class="search-button" type="image" src="img/search.png"  alt="send" name="searchbutton" id="searchbutton"></form>
+            <form><input class="search-button" type="image" src="../assets/img/search.png"  alt="send" name="searchbutton" id="searchbutton"></form>
             <input class="search-bar" type="text" name="search" id="search" placeholder="在此輸入" style="width: 150px;">
         </div>
     </nav>
@@ -62,7 +34,7 @@
         <section class="products">
             <div class="selected">
                 <div class="img">
-                    <img src="img/plantseries1.png">
+                    <img src="../assets/img/plantseries1.png">
                 </div>
                 <div class="content">
                     <h3>產品名字</h3>
@@ -80,7 +52,7 @@
 
             <div class="selected">
                 <div class="img">
-                    <img src="img/plantseries1.png">
+                    <img src="../assets/img/plantseries1.png">
                 </div>
                 <div class="content">
                     <h3>產品名字</h3>
@@ -98,7 +70,7 @@
 
             <div class="selected">
                 <div class="img">
-                    <img src="img/plantseries1.png">
+                    <img src="../assets/img/plantseries1.png">
                 </div>
                 <div class="content">
                     <h3>產品名字</h3>
@@ -203,7 +175,7 @@
                 <button class="back">回到首頁</button>
             </div>
         </div>
-        <script src="cart2.js"></script>
+        <script src="../assets/js/cart2.js"></script>
     </div>
 
 </body>

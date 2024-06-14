@@ -51,6 +51,7 @@ a:hover {
     width: 30px;
     float: right;
     margin: 10px;
+    cursor: pointer;
 }
 
 .user,
@@ -58,7 +59,6 @@ a:hover {
     background-color: transparent;
     border: 1px solid transparent;
     color: #333;
-    cursor: pointer;
     float: right;
 }
 
@@ -332,6 +332,9 @@ h1 span{
 
 /*送出後返回首頁*/
 .back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
     margin-top: 15px;
     border: none;
