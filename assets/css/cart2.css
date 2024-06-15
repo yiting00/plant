@@ -270,6 +270,7 @@ h1 span{
 }
 
 .backOnce{
+    text-align: center;
     padding: 10px;
     border: none;
     font-size: 25px;
@@ -277,6 +278,10 @@ h1 span{
     background-color:rgb(215, 215, 215);
     width: 20%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.backOnce a {
+    text-decoration: none;
 }
 
 .paid{
@@ -348,6 +353,7 @@ h1 span{
 .back:hover, .backOnce:hover, .paid:hover {
     background-color: #333333;
     color: rgb(215, 215, 215);
+    text-decoration: none;
 }
 
 .back:active, .backOnce:active, .paid:active {

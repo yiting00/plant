@@ -42,8 +42,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const pop2 = document.getElementById('pop2');
     const pop = document.getElementById('pop');
     const closeButtons = document.querySelectorAll('.backOnce');
-    const paid = document.querySelectorAll('.paid');
-
 
     payment.addEventListener('change', () => {
     const pay = payment.value;
@@ -69,18 +67,23 @@ window.addEventListener('DOMContentLoaded', () => {
           pop2.style.display = 'none';
         });
     });
+});
 
-    paid.forEach((button) => {
-        button.addEventListener('click', () => {
-          pop2.style.display = 'block';
-        });
-    });
+//卡號只能是數字且不能填空
+document.getElementById('form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+  var cardNumber = document.getElementById('bank').value;
+
+  if (!/^\d+$/.test(cardNumber)) {
+    alert('請輸入數字作為信用卡卡號.');
+    return;
+  }
+
+  // Show the pop-up
+  document.getElementById('pop2').style.display = 'block';
 });
 
 //付款成功
-const pop2 = document.getElementById('pop2');
-var paid = document.getElementById("paid");
-
 pay.onclick = function() {
     pop2.style.display = 'block';
 }

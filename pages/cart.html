@@ -13,26 +13,17 @@
         <a href="all_product.html">植栽</a>
         <a href="member.html">會員專區</a>
         <a href="aboutus.html">關於我們</a>
-        <div class="user">
-            <button class="user"><img src="../assets/img/user.png" alt="user"></button>
-            <ul class="menu">
-                <li>
-                  <button onclick="openLoginForm()">登入</button>
-                </li>
-                <li>
-                  <button onclick="openregisterForm()">註冊</button>
-                </li>
-            </ul>
-        </div>
-<!--user 跳出視窗(login.html/register.html) 暫時刪掉-->
+
         <div class="cart">   
-            <button class="cart"><img src="../assets/img/cart.png" alt="user"></button>
+            <a href="cart.html" style="padding: 0;"><button class="cart"><img src="../assets/img/cart.png" alt="user"></button></a>
         </div>
+        
         <div class="search">
             <form><input class="search-button" type="image" src="../assets/img/search.png"  alt="send" name="searchbutton" id="searchbutton"></form>
             <input class="search-bar" type="text" name="search" id="search" placeholder="在此輸入" style="width: 150px;">
         </div>
     </nav>
+
     <div class="container">
         <article>
             <section class="product" data-price="100">
@@ -83,7 +74,7 @@
         </article>
         <footer>
             <h4>小計金額 <span id="total-amount">0 元</span></h4>
-            <button id="checkout-button"> <a href="cart2.html" style="color:white;text-decoration:none">下一頁</a></button>
+            <a href="cart2.html" style="color:white;text-decoration:none">下一頁</a>
         </footer>
     </div>
 

@@ -15,10 +15,6 @@
         <a href="member.html">會員專區</a>
         <a href="aboutus.html">關於我們</a>
 
-        <div class="user">
-            <button class="user"><img src="../assets/img/user.png" alt="user"></button>
-        </div>
-
         <div class="cart">   
             <a href="cart.html" style="padding: 0;"><button class="cart"><img src="../assets/img/cart.png" alt="user"></button></a>
         </div>
@@ -160,18 +156,21 @@
         
         <div id="pop" class="pop">
             <div class="pop-content">
-                <h2>請輸入信用卡卡號：</h2>
-                <input type="tel" id="bank" required minlength="16" maxlength="16">
-                <section>
-                    <button class="backOnce">返回</button>
-                    <button class="paid">付款</button>
-                </section>
+                <form id="form">
+                    <h2>請輸入信用卡卡號：</h2>
+                    <input type="text" id="bank" name="bank" required>
+                
+                    <section>
+                        <a class="backOnce">返回</a>
+                        <button type="submit" class="paid">付款</button>
+                    </section>
+                </form>
             </div>
         </div>
     
         <div id="pop2" class="pop2">
             <div class="pop2-content">
-                <h2>：已成功送出訂單</h2>
+                <label for="bank"><h2>：已成功送出訂單</h2></label>
                 <button class="back">回到首頁</button>
             </div>
         </div>
