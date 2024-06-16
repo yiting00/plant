@@ -71,7 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //卡號只能是數字且不能填空
 document.getElementById('form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the form from submitting normally
+  event.preventDefault(); 
   var cardNumber = document.getElementById('bank').value;
 
   if (!/^\d+$/.test(cardNumber)) {
@@ -79,7 +79,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
     return;
   }
 
-  // Show the pop-up
+
   document.getElementById('pop2').style.display = 'block';
 });
 
